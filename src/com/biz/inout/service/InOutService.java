@@ -31,18 +31,18 @@ public class InOutService {
 				String strIO = br.readLine();
 				if(strIO == null) break;
 				sInOut = strIO.split(":");
-					if(sInOut[1].equals("1")) {
+					if(sInOut[2].equals("0")) {
 						vo.setStrDate(sInOut[0]);
-						vo.setStrInout(sInOut[1]);
-						vo.setStrPum(sInOut[2]);
+						vo.setStrInout(sInOut[2]);
+						vo.setStrPum(sInOut[1]);
 						vo.setStrDan(sInOut[3]);
 						vo.setStrSu(sInOut[4]);
 						vo.setInSum(Integer.valueOf(sInOut[3]) * Integer.valueOf(sInOut[4]));
 						iOList.add(vo);
 					} else {	
 						vo.setStrDate(sInOut[0]);
-						vo.setStrInout(sInOut[1]);
-						vo.setStrPum(sInOut[2]);
+						vo.setStrInout(sInOut[2]);
+						vo.setStrPum(sInOut[1]);
 						vo.setStrDan(sInOut[3]);
 						vo.setStrSu(sInOut[4]);
 						vo.setOutSum(Integer.valueOf(sInOut[3]) * Integer.valueOf(sInOut[4]));
@@ -59,14 +59,14 @@ public class InOutService {
 
 	public void printInOut() {
 		System.out.println("======================================================================================================");
-		System.out.println("거래일자"+"\t\t\t"+"구분"+"\t"+"상품명"+"\t\t"+"단가"+"\t\t"+"수량"+"\t"+"매입금액"+"\t\t\t"+"매출금액");
+		System.out.println("거래일자"+"\t\t\t"+"구분"+"\t"+"상품명"+"\t\t\t\t"+"단가"+"\t\t"+"수량"+"\t"+"매입금액"+"\t\t\t"+"매출금액");
 		System.out.println("------------------------------------------------------------------------------------------------------");
 		for(InOutVO vo : iOList) {
-			if(sInOut[1].equals("1")) {
+			if(sInOut[2].equals("0")) {
 				System.out.println(
 						vo.getStrDate() + "\t\t" 
 						+ vo.getStrInout() + "\t"
-						+ vo.getStrPum() + "\t\t"
+						+ vo.getStrPum() + "\t\t\t\t"
 						+ vo.getStrDan() + "\t\t"
 						+ vo.getStrSu() + "\t"
 						+ vo.getInSum() + "\t\t\t"
@@ -76,7 +76,7 @@ public class InOutService {
 				System.out.println(
 						vo.getStrDate() + "\t\t" 
 						+ vo.getStrInout() + "\t"
-						+ vo.getStrPum() + "\t\t"
+						+ vo.getStrPum() + "\t\t\t\t"
 						+ vo.getStrDan() + "\t\t"
 						+ vo.getStrSu() + "\t"
 						+ vo.getInSum() + "\t\t\t"

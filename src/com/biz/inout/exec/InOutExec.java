@@ -6,7 +6,7 @@ public class InOutExec {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String strinout = "src/com/biz/inout/vo/매입매출.txt";
+		String strinout = "src/com/biz/inout/vo/iolist.txt";
 		InOutService ios = new InOutService(strinout);
 		
 		ios.readFile();
